@@ -37,7 +37,7 @@ _$GeneralSettingsImpl _$$GeneralSettingsImplFromJson(
       cursiveFontName: json['cursiveFontName'] as String? ?? "",
       fantasyFontName: json['fantasyFontName'] as String? ?? "",
       languages: $enumDecodeNullable(_$LanguagesEnumMap, json['languages']) ??
-          Languages.jaJP,
+          Languages.zhCN,
     );
 
 Map<String, dynamic> _$$GeneralSettingsImplToJson(
@@ -94,4 +94,5 @@ const _$EmojiTypeEnumMap = {
 const _$LanguagesEnumMap = {
   Languages.jaJP: 'jaJP',
   Languages.jaOJ: 'jaOJ',
+  Languages.zhCN: 'zhCN',
 };

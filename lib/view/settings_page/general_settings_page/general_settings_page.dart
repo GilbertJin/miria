@@ -37,7 +37,7 @@ class GeneralSettingsPageState extends ConsumerState<GeneralSettingsPage> {
   String monospaceFontName = "";
   String cursiveFontName = "";
   String fantasyFontName = "";
-  Languages language = Languages.jaJP;
+  Languages language = Languages.zhCN;
 
   @override
   void initState() {
@@ -144,7 +144,7 @@ class GeneralSettingsPageState extends ConsumerState<GeneralSettingsPage> {
                         value: language,
                         onChanged: (value) => setState(
                           () {
-                            language = value ?? Languages.jaJP;
+                            language = value ?? Languages.zhCN;
                             save();
                           },
                         ),

@@ -74,7 +74,7 @@ class AppThemeScopeState extends ConsumerState<AppThemeScope> {
       return "SF Pro Text";
     }
     if (defaultTargetPlatform == TargetPlatform.linux) {
-      return "Noto Sans CJK JP";
+      return "Noto Sans CJK SC";
     }
 
     return "KosugiMaru";
@@ -85,7 +85,7 @@ class AppThemeScopeState extends ConsumerState<AppThemeScope> {
         defaultTargetPlatform == TargetPlatform.linux) {
       return [
         if (defaultFontName.isNotEmpty) resolveFontFamilyName(""),
-        "Noto Sans CJK JP",
+        "Noto Sans CJK SC",
         "KosugiMaru",
         "BIZ UDPGothic"
       ];
@@ -94,8 +94,8 @@ class AppThemeScopeState extends ConsumerState<AppThemeScope> {
         defaultTargetPlatform == TargetPlatform.macOS) {
       return [
         if (defaultFontName.isNotEmpty) resolveFontFamilyName(""),
+        "San Francisco",
         "Hiragino Maru Gothic ProN",
-        "Apple Color Emoji",
       ];
     }
     return [];
@@ -106,9 +106,9 @@ class AppThemeScopeState extends ConsumerState<AppThemeScope> {
 
     if (defaultTargetPlatform == TargetPlatform.iOS ||
         defaultTargetPlatform == TargetPlatform.macOS) {
-      fallback.addAll(["Hiragino Mincho ProN", "Apple Color Emoji"]);
+      fallback.addAll(["San Francisco", "Apple Color Emoji"]);
     } else {
-      fallback.addAll(["Noto Serif CJK JP", "Noto Serif", "Droid Serif"]);
+      fallback.addAll(["Noto Serif CJK SC", "Noto Serif", "Droid Serif"]);
     }
     return (defaultFontName.isEmpty
             ? const TextStyle()
@@ -123,7 +123,7 @@ class AppThemeScopeState extends ConsumerState<AppThemeScope> {
     if (defaultTargetPlatform == TargetPlatform.iOS ||
         defaultTargetPlatform == TargetPlatform.macOS) {
       fontName = "Monaco";
-      fallback.addAll(const ["Apple Color Emoji", "Hiragino Maru Gothic ProN"]);
+      fallback.addAll(const ["Hiragino Maru Gothic ProN", "Apple Color Emoji"]);
     } else if (defaultTargetPlatform == TargetPlatform.windows) {
       fontName = "Consolas";
       fallback.addAll(const ["Segoe UI Emoji", "Noto Color Emoji", "Meiryo"]);
