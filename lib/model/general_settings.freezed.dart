@@ -368,7 +368,7 @@ class _$GeneralSettingsImpl implements _GeneralSettings {
       this.monospaceFontName = "",
       this.cursiveFontName = "",
       this.fantasyFontName = "",
-      this.languages = Languages.jaJP});
+      this.languages = Languages.zhCN});
 
   factory _$GeneralSettingsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeneralSettingsImplFromJson(json);

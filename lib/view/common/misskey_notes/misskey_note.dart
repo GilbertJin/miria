@@ -818,7 +818,7 @@ class RenoteHeader extends ConsumerWidget {
                 TextSpan(
                   text: note.user.acct == note.renote?.user.acct
                       ? S.of(context).selfRenotedBy
-                      : S.of(context).renotedBy,
+                      : S.of(context).renotedBy(note.user.acct),
                   style: renoteTextStyle,
                 )
               ],

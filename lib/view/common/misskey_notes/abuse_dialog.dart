@@ -58,6 +58,7 @@ class AbuseDialogState extends ConsumerState<AbuseDialog> {
         title: SimpleMfmText(
           S.of(context).reportAbuseOf(
                 widget.targetUser.name ?? widget.targetUser.username,
+                Object()
               ),
         ),
         content: SingleChildScrollView(
