@@ -23,6 +23,7 @@ extension FutureFunctionExtension<T> on Future<T> Function() {
     return () => this.call().catchError((e) {
           final widgetRef = ProviderScope.containerOf(context, listen: false);
           widgetRef.read(errorEventProvider.notifier).state = (e, context);
+          return e;
         });
   }
 }
