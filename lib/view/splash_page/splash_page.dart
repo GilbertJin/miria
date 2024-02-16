@@ -39,7 +39,7 @@ class SplashPageState extends ConsumerState<SplashPage> {
         initialSharingMedias = (await ReceiveSharingIntent.getInitialMedia())
             .map((e) => e.path)
             .toList();
-        initialSharingText = await ReceiveSharingIntent.getInitialText() ?? "";
+        // initialSharingText = await ReceiveSharingIntent.getInitialText() ?? "";
       }
 
       LicenseRegistry.addLicense(

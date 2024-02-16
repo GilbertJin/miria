@@ -3,11 +3,9 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:miria/const.dart';
 import 'package:miria/model/general_settings.dart';
 import 'package:miria/providers.dart';
-import 'package:miria/view/themes/app_theme.dart';
 import 'package:miria/view/themes/built_in_color_themes.dart';
 
 @RoutePage()
