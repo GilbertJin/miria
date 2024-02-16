@@ -22,7 +22,6 @@ extension FutureFunctionExtension<T> on Future<T> Function() {
   Future<T> Function() expectFailure(BuildContext context) {
     return () => this.call().catchError((e) {
           final widgetRef = ProviderScope.containerOf(context, listen: false);
-
           widgetRef.read(errorEventProvider.notifier).state = (e, context);
         });
   }

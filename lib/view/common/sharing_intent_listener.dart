@@ -26,7 +26,7 @@ class SharingIntentListener extends ConsumerStatefulWidget {
 class SharingIntentListenerState extends ConsumerState<SharingIntentListener> {
   late final StreamSubscription<List<SharedMediaFile>>
       intentDataStreamSubscription;
-  late final StreamSubscription<String> intentDataTextStreamSubscription;
+  // late final StreamSubscription<String> intentDataTextStreamSubscription;
   late Iterable<Account> account = [];
 
   @override
@@ -48,26 +48,26 @@ class SharingIntentListenerState extends ConsumerState<SharingIntentListener> {
           ));
         }
       });
-      intentDataTextStreamSubscription =
-          ReceiveSharingIntent.getTextStream().listen((event) {
-        if (account.length == 1) {
-          widget.router.push(NoteCreateRoute(
-            initialText: event,
-            initialAccount: account.first,
-          ));
-        } else {
-          widget.router.push(SharingAccountSelectRoute(
-            sharingText: event,
-          ));
-        }
-      });
+      // intentDataTextStreamSubscription =
+      //     ReceiveSharingIntent.getTextStream().listen((event) {
+      //   if (account.length == 1) {
+      //     widget.router.push(NoteCreateRoute(
+      //       initialText: event,
+      //       initialAccount: account.first,
+      //     ));
+      //   } else {
+      //     widget.router.push(SharingAccountSelectRoute(
+      //       sharingText: event,
+      //     ));
+      //   }
+      // });
     }
   }
 
   @override
   void dispose() {
     intentDataStreamSubscription.cancel();
-    intentDataTextStreamSubscription.cancel();
+    // intentDataTextStreamSubscription.cancel();
     super.dispose();
   }
 

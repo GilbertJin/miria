@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:miria/providers.dart';
 import 'package:miria/router/app_router.dart';
@@ -13,8 +14,16 @@ class NotificationIcon extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final hasUnread = ref.watch(iProvider(AccountScope.of(context).acct)
         .select((value) => value.hasUnreadNotification));
-
     if (hasUnread) {
+      AwesomeNotifications().createNotification(
+          content: NotificationContent(
+            id: 1,
+            channelKey: 'basic_channel',
+            actionType: ActionType.Default,
+            title: 'Miria',
+            body: '您有新的未读消息',
+          )
+      );
       return IconButton(
           onPressed: () => context
               .pushRoute(NotificationRoute(account: AccountScope.of(context))),
