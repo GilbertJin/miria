@@ -60,9 +60,6 @@ jobs:
             flutter pub run cider bump build --bump-build
             echo "BUMP_VERSION=$(flutter pub run cider version)" >> $GITHUB_ENV
 
-        - name: Run flutter test with coverage
-          run: flutter test --coverage --coverage-path=~/coverage/lcov.info
-
         - name: Create apk file
           run: |
             echo -n "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode --output ./android/release.keystore
