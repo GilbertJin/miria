@@ -5,11 +5,7 @@
 
 name: Deploy Android (zh-CN)
 
-on:
-  push:
-    branches: [ "alpha" ]
-  pull_request:
-    branches: [ "alpha" ]
+on: workflow_dispatch
 
 permissions:
   contents: write
@@ -63,12 +59,6 @@ jobs:
           run: |
             flutter pub run cider bump build --bump-build
             echo "BUMP_VERSION=$(flutter pub run cider version)" >> $GITHUB_ENV
-
-        - name: Commit and push pubspec.yaml
-          run: |
-              git add -u pubspec.yaml
-              echo "Bumped version number to $BUMP_VERSION" | git commit --file=-
-              git push
 
         - name: Run flutter test with coverage
           run: flutter test --coverage --coverage-path=~/coverage/lcov.info
