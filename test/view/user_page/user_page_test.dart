@@ -498,7 +498,7 @@ void main() {
         await tester.pumpAndSettle();
         await tester.tap(find.descendant(
             of: find.byType(Tab), matching: find.text("リアクション")));
-        await tester.pumpAndSettle();
+        await tester.pumpAndSettle(const Duration(seconds: 3));
 
         expect(find.text(TestData.note3AsAnotherUser.text!), findsOneWidget);
         await tester.pageNation();
@@ -533,10 +533,8 @@ void main() {
           ),
         ));
         await tester.pumpAndSettle();
-        await tester.dragUntilVisible(
-          find.text("フォロー"),
-          find.byType(CustomScrollView),
-          const Offset(0, -50));
+        await tester.dragUntilVisible(find.text("フォロー"),
+            find.byType(CustomScrollView), const Offset(0, -50));
         await tester.pump();
         await tester.tap(find.text("フォロー"));
         await tester.pumpAndSettle();
@@ -575,10 +573,8 @@ void main() {
           ),
         ));
         await tester.pumpAndSettle();
-        await tester.dragUntilVisible(
-          find.text("フォロワー"),
-          find.byType(CustomScrollView),
-          const Offset(0, -50));
+        await tester.dragUntilVisible(find.text("フォロワー"),
+            find.byType(CustomScrollView), const Offset(0, -50));
         await tester.pump();
         await tester.tap(find.text("フォロワー"));
         await tester.pumpAndSettle();
