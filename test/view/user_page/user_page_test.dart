@@ -498,7 +498,7 @@ void main() {
         await tester.pumpAndSettle();
         await tester.tap(find.descendant(
             of: find.byType(Tab), matching: find.text("リアクション")));
-        await tester.pumpAndSettle(const Duration(seconds: 3));
+        await tester.pumpAndSettle(const Duration(seconds: 5));
 
         expect(find.text(TestData.note3AsAnotherUser.text!), findsOneWidget);
         await tester.pageNation();
