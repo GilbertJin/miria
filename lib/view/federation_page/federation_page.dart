@@ -117,7 +117,6 @@ class FederationPageState extends ConsumerState<FederationPage> {
                       Account.demoAccount(widget.host, misskeyMeta)))
                   .loadFromSourceIfNeed();
             } catch (e) {}
-            ;
           }
 
           ref.read(federationPageFederationDataProvider.notifier).state =
